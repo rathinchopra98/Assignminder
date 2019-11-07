@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  Assignminder
 //
-//  Created by Rathin Chopra on 2019-11-06.
-//  Copyright © 2019 Rathin Chopra. All rights reserved.
+//  Created by Rathin Chopra and Salim Elewa on 2019-11-06.
+//  Copyright © 2019 Rathin Chopra and Salim Elewa. All rights reserved.
 //
 
 import UIKit

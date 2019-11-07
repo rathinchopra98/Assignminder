@@ -3,7 +3,7 @@
 //  Assignminder
 //
 //  Created by Rathin Chopra on 2019-11-06.
-//  Copyright © 2019 Rathin Chopra. All rights reserved.
+//  Copyright © 2019 Rathin Chopra and Salim Elewa. All rights reserved.
 //
 
 import UIKit
