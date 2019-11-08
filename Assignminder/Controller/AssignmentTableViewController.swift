@@ -1,18 +1,16 @@
 //
-//  CoursesTableViewController.swift
+//  AssignmentTableViewController.swift
 //  Assignminder
 //
-//  Created by Rathin Chopra on 2019-11-06.
+//  Created by Rathin Chopra on 2019-11-07.
 //  Copyright © 2019 Rathin Chopra. All rights reserved.
 //
 
 import UIKit
 
-class CoursesTableViewController: UITableViewController {
+class AssignmentTableViewController: UITableViewController {
 
-    var courses = [Course]()
-    var assignments = [Assignment]()
-    var courseId: String? = nil
+    var assignmentsArrayTable = [Assignment]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,23 +20,15 @@ class CoursesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
         tableView.rowHeight = 60
+        self.tableView.reloadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.reloadData()
     }
     
-    @IBAction func slateBtnPress(_ sender: Any) {
-        performSegue(withIdentifier: "slateSegue", sender: nil)
-    }
-    
-    @IBAction func unwindToThisView(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.source as? SlateViewController {
-            courses = sourceViewController.courseArray
-            assignments = sourceViewController.assignmentArray
-        }
-    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -48,17 +38,17 @@ class CoursesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return courses.count
+        return assignmentsArrayTable.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "coursesCell", for: indexPath)
-            as! CoursesTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "assignmentCell", for: indexPath)
+            as! AssignmentTableViewCell
 
         // Configure the cell...
-        cell.coursesLabel.text = courses[indexPath.row].courseName
-        cell.courseCodeLabel.text = courses[indexPath.row].courseCode
+        cell.AssignmentLabel.text = assignmentsArrayTable[indexPath.row].assignmentName
+        cell.dueDateLabel.text = assignmentsArrayTable[indexPath.row].dueDate
         cell.colorLabel.backgroundColor = getRandomColor()
         
         return cell
@@ -71,11 +61,6 @@ class CoursesTableViewController: UITableViewController {
          let blue:CGFloat = CGFloat(drand48())
 
          return UIColor(red:red, green: green, blue: blue, alpha: 1.0)
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.courseId = courses[indexPath.row].courseCode
-        performSegue(withIdentifier: "assignmentSegue", sender: nil)
     }
     
     /*
@@ -113,22 +98,14 @@ class CoursesTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "assignmentSegue"){
-            let childPage = segue.destination as! AssignmentTableViewController
-            var newAssignments = [Assignment]()
-            for item in assignments{
-                if(item.courseId == self.courseId){
-                    newAssignments.append(item)
-                }
-            }
-            childPage.assignmentsArrayTable = newAssignments
-        }
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
-    
+    */
 
 }

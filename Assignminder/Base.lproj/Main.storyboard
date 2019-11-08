@@ -138,11 +138,72 @@
                     </navigationItem>
                     <connections>
                         <segue destination="Pw8-VB-M82" kind="show" identifier="slateSegue" id="oty-45-cX7"/>
+                        <segue destination="zlI-ch-Rqu" kind="show" identifier="assignmentSegue" id="erz-9q-cND"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eda-Di-aBX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3927.1999999999998" y="-376.10837438423647"/>
+        </scene>
+        <!--Assignments-->
+        <scene sceneID="E3o-JH-PYS">
+            <objects>
+                <tableViewController id="zlI-ch-Rqu" customClass="AssignmentTableViewController" customModule="Assignminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SzM-Ay-MZx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="assignmentCell" rowHeight="60" id="kkR-gq-UJc" customClass="AssignmentTableViewCell" customModule="Assignminder" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kkR-gq-UJc" id="hs2-py-5ZQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="60"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6U-GJ-n3w">
+                                            <rect key="frame" x="0.0" y="0.0" width="10" height="60"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8R1-ws-YSC">
+                                            <rect key="frame" x="18" y="11" width="287" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWw-of-9Md">
+                                            <rect key="frame" x="18" y="33" width="287" height="16"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="AssignmentLabel" destination="8R1-ws-YSC" id="vFJ-pt-UVl"/>
+                                    <outlet property="colorLabel" destination="U6U-GJ-n3w" id="Xue-ez-sdJ"/>
+                                    <outlet property="dueDateLabel" destination="nWw-of-9Md" id="Jd3-sl-p9n"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="zlI-ch-Rqu" id="EoK-nD-3fs"/>
+                            <outlet property="delegate" destination="zlI-ch-Rqu" id="iwA-p2-8sq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Assignments" id="4Kh-rb-Zcy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="77n-ej-IKV"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mCi-lA-CvU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4991.1999999999998" y="52.463054187192121"/>
         </scene>
         <!--Slate View Controller-->
         <scene sceneID="PIg-so-N9o">
@@ -178,7 +239,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x9c-td-lnr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="CYG-bX-EiO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4940" y="-376.10837438423647"/>
+            <point key="canvasLocation" x="4996" y="-706"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zbx-vx-an9">
