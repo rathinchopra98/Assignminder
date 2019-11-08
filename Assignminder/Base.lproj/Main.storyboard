@@ -132,28 +132,51 @@
                     <navigationItem key="navigationItem" title="Courses" id="2C0-fY-mts">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vjK-aw-apb">
                             <connections>
-                                <segue destination="Pw8-VB-M82" kind="show" id="sHR-mi-rZX"/>
+                                <action selector="slateBtnPress:" destination="5tK-hP-F0a" id="Jet-Gn-akQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Pw8-VB-M82" kind="show" identifier="slateSegue" id="oty-45-cX7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eda-Di-aBX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3927.1999999999998" y="-376.10837438423647"/>
         </scene>
-        <!--View Controller-->
+        <!--Slate View Controller-->
         <scene sceneID="PIg-so-N9o">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="Pw8-VB-M82" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="Pw8-VB-M82" customClass="SlateViewController" customModule="Assignminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Su6-EV-buF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LQp-aB-G3c">
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZa-Zq-OxG">
+                                <rect key="frame" x="164" y="736" width="46" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="CYG-bX-EiO" kind="unwind" unwindAction="unwindToThisViewWithSender:" id="tnj-mC-gct"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="V4o-F0-RtF"/>
                     </view>
                     <navigationItem key="navigationItem" id="m4K-f1-Z80"/>
+                    <connections>
+                        <outlet property="backBtn" destination="HZa-Zq-OxG" id="mHE-PI-qVT"/>
+                        <outlet property="webView" destination="LQp-aB-G3c" id="6RW-Nw-Yfe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x9c-td-lnr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="CYG-bX-EiO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4940" y="-376.10837438423647"/>
         </scene>

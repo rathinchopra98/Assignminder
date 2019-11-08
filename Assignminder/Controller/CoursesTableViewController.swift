@@ -10,6 +10,7 @@ import UIKit
 
 class CoursesTableViewController: UITableViewController {
 
+    var courses = [Course]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +22,23 @@ class CoursesTableViewController: UITableViewController {
         tableView.rowHeight = 60
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        print("List")
+        for item in courses{
+            print(item.courseName)
+        }
+        self.tableView.reloadData()
+    }
+    
+    @IBAction func slateBtnPress(_ sender: Any) {
+        performSegue(withIdentifier: "slateSegue", sender: nil)
+    }
+    
+    @IBAction func unwindToThisView(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? SlateViewController {
+            courses = sourceViewController.courseArray
+        }
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -30,7 +48,7 @@ class CoursesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return courses.count
     }
 
     
@@ -39,8 +57,8 @@ class CoursesTableViewController: UITableViewController {
             as! CoursesTableViewCell
 
         // Configure the cell...
-        cell.coursesLabel.text = "hello"
-        cell.courseCodeLabel.text  = "j"
+        cell.coursesLabel.text = courses[indexPath.row].courseName
+        cell.courseCodeLabel.text = courses[indexPath.row].courseCode
         cell.colorLabel.backgroundColor = getRandomColor()
         
         return cell
@@ -90,7 +108,7 @@ class CoursesTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -98,6 +116,6 @@ class CoursesTableViewController: UITableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
