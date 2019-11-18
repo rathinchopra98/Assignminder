@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VwV-z5-BCh">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -181,7 +181,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Courses" id="2C0-fY-mts">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vjK-aw-apb">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="2cJ-HM-O0R">
+                            <connections>
+                                <action selector="addCourseManuallyBtn:" destination="5tK-hP-F0a" id="cLq-be-1nx"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Slate" id="vjK-aw-apb">
                             <connections>
                                 <action selector="slateBtnPress:" destination="5tK-hP-F0a" id="Jet-Gn-akQ"/>
                             </connections>
@@ -190,6 +195,7 @@
                     <connections>
                         <segue destination="Pw8-VB-M82" kind="show" identifier="slateSegue" id="oty-45-cX7"/>
                         <segue destination="zlI-ch-Rqu" kind="show" identifier="assignmentSegue" id="erz-9q-cND"/>
+                        <segue destination="RDW-WG-683" kind="show" id="Rhz-fT-nhU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eda-Di-aBX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -254,7 +260,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mCi-lA-CvU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4991.1999999999998" y="52.463054187192121"/>
+            <point key="canvasLocation" x="4996" y="1"/>
         </scene>
         <!--Slate View Controller-->
         <scene sceneID="PIg-so-N9o">
@@ -292,6 +298,35 @@
             </objects>
             <point key="canvasLocation" x="4996" y="-706"/>
         </scene>
+        <!--Add Course-->
+        <scene sceneID="ceT-yM-STq">
+            <objects>
+                <viewController id="RDW-WG-683" customClass="AddCourseViewController" customModule="Assignminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6qD-vz-nSs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Course" translatesAutoresizingMaskIntoConstraints="NO" id="sQG-Ua-KTz">
+                                <rect key="frame" x="0.0" y="88" width="375" height="155"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaH-aN-PNy">
+                                <rect key="frame" x="16" y="369" width="109" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="i2s-pc-kyN"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Course" id="eEx-HK-2aq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pAX-Gh-9uH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4989.6000000000004" y="-1446.0591133004928"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zbx-vx-an9">
             <objects>
@@ -304,13 +339,14 @@
                     <connections>
                         <segue destination="Mae-if-kco" kind="relationship" relationship="viewControllers" id="rw6-MF-Vlv"/>
                         <segue destination="4MH-jF-JFm" kind="relationship" relationship="viewControllers" id="THh-g6-Bsv"/>
+                        <segue destination="pkE-xy-KMN" kind="relationship" relationship="viewControllers" id="wQK-WL-r4K"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVh-SR-hIq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2020" y="112"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Homework-->
         <scene sceneID="qws-n5-lgj">
             <objects>
                 <tableViewController id="4MH-jF-JFm" sceneMemberID="viewController">
@@ -333,11 +369,40 @@
                             <outlet property="delegate" destination="4MH-jF-JFm" id="wD1-Yg-iTY"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="mP3-6o-yUO"/>
+                    <tabBarItem key="tabBarItem" title="Homework" image="tray.full.fill" catalog="system" id="mP3-6o-yUO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Cu-Vs-WSd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2985" y="426"/>
+        </scene>
+        <!--Grades-->
+        <scene sceneID="bs3-w6-c1t">
+            <objects>
+                <tableViewController id="pkE-xy-KMN" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Nd5-4A-RJr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="LRe-k9-WEW">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LRe-k9-WEW" id="Gfe-If-5iv">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pkE-xy-KMN" id="Tab-3l-QXv"/>
+                            <outlet property="delegate" destination="pkE-xy-KMN" id="o4R-NO-on5"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Grades" image="doc.richtext" catalog="system" id="FQX-ls-YjU"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uFS-PF-3HO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2985" y="1267"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hkj-D1-2rK">
@@ -359,11 +424,11 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Courses-->
         <scene sceneID="1mL-By-6ZC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mae-if-kco" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="Nfe-19-8LP"/>
+                    <tabBarItem key="tabBarItem" title="Courses" image="book" catalog="system" id="Nfe-19-8LP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6lm-jn-EfP">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -383,6 +448,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Course" width="1920" height="928"/>
         <image name="Logo" width="512" height="512"/>
+        <image name="book" catalog="system" width="64" height="50"/>
+        <image name="doc.richtext" catalog="system" width="56" height="64"/>
+        <image name="tray.full.fill" catalog="system" width="64" height="44"/>
     </resources>
 </document>

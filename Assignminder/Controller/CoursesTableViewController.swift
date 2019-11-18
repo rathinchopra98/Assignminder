@@ -29,6 +29,10 @@ class CoursesTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
+    @IBAction func addCourseManuallyBtn(_ sender: Any) {
+        performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+    }
+    
     @IBAction func slateBtnPress(_ sender: Any) {
         performSegue(withIdentifier: "slateSegue", sender: nil)
     }
