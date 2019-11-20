@@ -30,7 +30,7 @@ class CoursesTableViewController: UITableViewController {
     }
     
     @IBAction func addCourseManuallyBtn(_ sender: Any) {
-        performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+        performSegue(withIdentifier: "addCourseSegue", sender: nil)
     }
     
     @IBAction func slateBtnPress(_ sender: Any) {
@@ -41,6 +41,9 @@ class CoursesTableViewController: UITableViewController {
         if let sourceViewController = sender.source as? SlateViewController {
             courses = sourceViewController.courseArray
             assignments = sourceViewController.assignmentArray
+        }
+        else if let sourceViewController = sender.source as? AddCourseViewController{
+            courses = sourceViewController.courseArray
         }
     }
     // MARK: - Table view data source
@@ -131,6 +134,14 @@ class CoursesTableViewController: UITableViewController {
                 }
             }
             childPage.assignmentsArrayTable = newAssignments
+        }
+        else if(segue.identifier == "addCourseSegue"){
+            let childPage = segue.destination as! AddCourseViewController
+            childPage.courseArray = courses
+        }
+        else if(segue.identifier == "slateSegue"){
+            let childPage = segue.destination as! SlateViewController
+            childPage.courseArray = courses
         }
     }
     
