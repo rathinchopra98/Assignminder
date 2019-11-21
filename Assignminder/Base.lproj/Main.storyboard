@@ -255,27 +255,78 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Assignments" id="4Kh-rb-Zcy">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="77n-ej-IKV"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="77n-ej-IKV">
+                            <connections>
+                                <action selector="addAssignment:" destination="zlI-ch-Rqu" id="q0k-QO-PVG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="eVh-Nf-7sY" kind="show" identifier="manualAssignmentSegue" id="IZe-gQ-8Qn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mCi-lA-CvU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4996" y="1"/>
+            <point key="canvasLocation" x="5938.3999999999996" y="0.73891625615763545"/>
         </scene>
-        <!--View Controller-->
+        <!--Manual Assignment View Controller-->
         <scene sceneID="Z5e-oo-6JG">
             <objects>
-                <viewController id="eVh-Nf-7sY" sceneMemberID="viewController">
+                <viewController id="eVh-Nf-7sY" customClass="ManualAssignmentViewController" customModule="Assignminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UV2-5I-qTR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Assignment" translatesAutoresizingMaskIntoConstraints="NO" id="8gK-gI-B6h">
+                                <rect key="frame" x="0.0" y="88" width="375" height="195"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Assignment Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDP-vW-ON8">
+                                <rect key="frame" x="16" y="332" width="145" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Due Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLx-Md-7c5">
+                                <rect key="frame" x="16" y="411" width="76" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zae-C7-Gi8">
+                                <rect key="frame" x="16" y="440" width="343" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSI-Q7-oc7">
+                                <rect key="frame" x="16" y="628" width="343" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.035294117647058823" green="0.4823529411764706" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Add Assignment">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G4G-ER-q1u">
+                                <rect key="frame" x="16" y="361" width="343" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="om7-hk-fL8"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Mc1-fS-IRF"/>
+                    <connections>
+                        <outlet property="addAssignmentBtn" destination="wSI-Q7-oc7" id="hqa-UA-gES"/>
+                        <outlet property="assignmentNameTxt" destination="G4G-ER-q1u" id="NpY-Bl-xYu"/>
+                        <outlet property="dueDate" destination="zae-C7-Gi8" id="R9V-MU-wyk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XuY-c7-TaB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6159" y="1"/>
+            <point key="canvasLocation" x="7100" y="0.73891625615763545"/>
         </scene>
         <!--Slate View Controller-->
         <scene sceneID="PIg-so-N9o">
@@ -322,18 +373,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Course" translatesAutoresizingMaskIntoConstraints="NO" id="sQG-Ua-KTz">
-                                <rect key="frame" x="0.0" y="88" width="375" height="155"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="195"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaH-aN-PNy">
-                                <rect key="frame" x="16" y="251" width="109" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J73-gk-L1f">
-                                <rect key="frame" x="16" y="280" width="343" height="34"/>
+                                <rect key="frame" x="16" y="336" width="343" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -342,14 +386,14 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course Code:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSA-vb-ufj">
-                                <rect key="frame" x="16" y="327" width="105" height="21"/>
+                                <rect key="frame" x="16" y="393" width="105" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mvF-Ml-l9H">
-                                <rect key="frame" x="16" y="356" width="343" height="34"/>
+                                <rect key="frame" x="16" y="422" width="343" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -360,7 +404,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95A-UJ-QFT">
                                 <rect key="frame" x="16" y="592" width="343" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.74117647058823533" green="0.8901960784313725" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Add Course">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -371,14 +415,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTx-7s-ujT">
-                                <rect key="frame" x="16" y="409" width="152" height="21"/>
+                                <rect key="frame" x="16" y="477" width="152" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r7X-km-rKp">
-                                <rect key="frame" x="16" y="438" width="343" height="34"/>
+                                <rect key="frame" x="16" y="506" width="343" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -386,6 +430,13 @@
                                     <action selector="courseDescriptionClick:" destination="RDW-WG-683" eventType="editingDidBegin" id="LaO-OU-f2J"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaH-aN-PNy">
+                                <rect key="frame" x="16" y="307" width="109" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="i2s-pc-kyN"/>
@@ -413,8 +464,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="Mae-if-kco" kind="relationship" relationship="viewControllers" id="rw6-MF-Vlv"/>
-                        <segue destination="4MH-jF-JFm" kind="relationship" relationship="viewControllers" id="THh-g6-Bsv"/>
-                        <segue destination="pkE-xy-KMN" kind="relationship" relationship="viewControllers" id="wQK-WL-r4K"/>
+                        <segue destination="Fpn-NJ-RnE" kind="relationship" relationship="viewControllers" id="THh-g6-Bsv"/>
+                        <segue destination="HPu-np-2Ik" kind="relationship" relationship="viewControllers" id="wQK-WL-r4K"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVh-SR-hIq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -444,13 +495,34 @@
                             <outlet property="delegate" destination="4MH-jF-JFm" id="wD1-Yg-iTY"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Homework" image="tray.full.fill" catalog="system" id="mP3-6o-yUO"/>
+                    <navigationItem key="navigationItem" title="Homework" id="foK-Pg-4eZ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Adi-Po-kR5"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="ltv-St-6CV" kind="show" id="ajG-Yr-Fzo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Cu-Vs-WSd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2985" y="426"/>
+            <point key="canvasLocation" x="3927.1999999999998" y="425.61576354679806"/>
         </scene>
-        <!--Grades-->
+        <!--View Controller-->
+        <scene sceneID="XC3-XK-AnE">
+            <objects>
+                <viewController id="ltv-St-6CV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2nc-Sh-k1W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Xkz-UF-ths"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0B6-v5-U8Q"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oO6-lI-I6W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4990" y="426"/>
+        </scene>
+        <!--Table View Controller-->
         <scene sceneID="bs3-w6-c1t">
             <objects>
                 <tableViewController id="pkE-xy-KMN" sceneMemberID="viewController">
@@ -473,11 +545,11 @@
                             <outlet property="delegate" destination="pkE-xy-KMN" id="o4R-NO-on5"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Grades" image="doc.richtext" catalog="system" id="FQX-ls-YjU"/>
+                    <navigationItem key="navigationItem" id="DxG-cz-Vbh"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uFS-PF-3HO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2985" y="1267"/>
+            <point key="canvasLocation" x="3927.1999999999998" y="1266.5024630541873"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hkj-D1-2rK">
@@ -521,8 +593,47 @@
             </objects>
             <point key="canvasLocation" x="2984.8000000000002" y="-376.10837438423647"/>
         </scene>
+        <!--Homework-->
+        <scene sceneID="hvM-En-pcV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fpn-NJ-RnE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Homework" image="tray.full.fill" catalog="system" id="mP3-6o-yUO"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GYd-Yi-7cw">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4MH-jF-JFm" kind="relationship" relationship="rootViewController" id="fVu-rY-PxH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yMk-Mk-RuX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2984.8000000000002" y="425.61576354679806"/>
+        </scene>
+        <!--Grades-->
+        <scene sceneID="M9g-6K-Fal">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HPu-np-2Ik" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Grades" image="doc.richtext" catalog="system" id="FQX-ls-YjU"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eCo-iC-YBb">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pkE-xy-KMN" kind="relationship" relationship="rootViewController" id="Xod-kq-Zbd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TyD-5c-xRW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2984.8000000000002" y="1266.5024630541873"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Assignment" width="720" height="300"/>
         <image name="Course" width="1920" height="928"/>
         <image name="Logo" width="512" height="512"/>
         <image name="book" catalog="system" width="64" height="50"/>

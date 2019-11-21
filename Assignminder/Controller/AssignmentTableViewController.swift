@@ -63,6 +63,10 @@ class AssignmentTableViewController: UITableViewController {
          return UIColor(red:red, green: green, blue: blue, alpha: 1.0)
     }
     
+    @IBAction func addAssignment(_ sender: Any) {
+        performSegue(withIdentifier: "manualAssignmentSegue", sender: nil)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
