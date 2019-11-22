@@ -60,24 +60,16 @@ class CoursesTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let randomColor = RandomColors()
         let cell = tableView.dequeueReusableCell(withIdentifier: "coursesCell", for: indexPath)
             as! CoursesTableViewCell
 
         // Configure the cell...
         cell.coursesLabel.text = courses[indexPath.row].courseName
         cell.courseCodeLabel.text = courses[indexPath.row].courseCode
-        cell.colorLabel.backgroundColor = getRandomColor()
+        cell.colorLabel.backgroundColor = randomColor.getRandomColor()
         
         return cell
-    }
-    
-    func getRandomColor() -> UIColor {
-         //Generate between 0 to 1
-         let red:CGFloat = CGFloat(drand48())
-         let green:CGFloat = CGFloat(drand48())
-         let blue:CGFloat = CGFloat(drand48())
-
-         return UIColor(red:red, green: green, blue: blue, alpha: 1.0)
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

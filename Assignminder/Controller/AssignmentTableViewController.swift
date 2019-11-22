@@ -43,24 +43,16 @@ class AssignmentTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let randomColor = RandomColors()
         let cell = tableView.dequeueReusableCell(withIdentifier: "assignmentCell", for: indexPath)
             as! AssignmentTableViewCell
 
         // Configure the cell...
         cell.AssignmentLabel.text = assignmentsArrayTable[indexPath.row].assignmentName
         cell.dueDateLabel.text = assignmentsArrayTable[indexPath.row].dueDate
-        cell.colorLabel.backgroundColor = getRandomColor()
+        cell.colorLabel.backgroundColor = randomColor.getRandomColor()
         
         return cell
-    }
-    
-    func getRandomColor() -> UIColor {
-         //Generate between 0 to 1
-         let red:CGFloat = CGFloat(drand48())
-         let green:CGFloat = CGFloat(drand48())
-         let blue:CGFloat = CGFloat(drand48())
-
-         return UIColor(red:red, green: green, blue: blue, alpha: 1.0)
     }
     
     @IBAction func addAssignment(_ sender: Any) {
@@ -102,7 +94,7 @@ class AssignmentTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -110,6 +102,6 @@ class AssignmentTableViewController: UITableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

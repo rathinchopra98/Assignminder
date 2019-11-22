@@ -12,6 +12,7 @@
 		5737B3CE23738FAE00A74508 /* UIViewAndExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5737B3CD23738FAE00A74508 /* UIViewAndExtension.swift */; };
 		5737B3D02373901200A74508 /* UIShadows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5737B3CF2373901200A74508 /* UIShadows.swift */; };
 		57422694237493670005DCB7 /* SlateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57422693237493670005DCB7 /* SlateViewController.swift */; };
+		5752FD85238877410093E043 /* RandomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752FD84238877410093E043 /* RandomColors.swift */; };
 		57783C242373CBEB00DA3737 /* CoursesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57783C232373CBEB00DA3737 /* CoursesTableViewController.swift */; };
 		57B9AB5C2374D83700797C5C /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B9AB5B2374D83700797C5C /* Course.swift */; };
 		57BEDDC923833F8E008C6F8C /* AddCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BEDDC823833F8E008C6F8C /* AddCourseViewController.swift */; };
@@ -33,6 +34,7 @@
 		5737B3CD23738FAE00A74508 /* UIViewAndExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewAndExtension.swift; sourceTree = "<group>"; };
 		5737B3CF2373901200A74508 /* UIShadows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIShadows.swift; sourceTree = "<group>"; };
 		57422693237493670005DCB7 /* SlateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlateViewController.swift; sourceTree = "<group>"; };
+		5752FD84238877410093E043 /* RandomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomColors.swift; sourceTree = "<group>"; };
 		57783C232373CBEB00DA3737 /* CoursesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTableViewController.swift; sourceTree = "<group>"; };
 		57B9AB5B2374D83700797C5C /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		57BEDDC823833F8E008C6F8C /* AddCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				5737B3CD23738FAE00A74508 /* UIViewAndExtension.swift */,
 				5737B3CF2373901200A74508 /* UIShadows.swift */,
 				57E564D023751FDA004AE376 /* AssignmentTableViewCell.swift */,
+				5752FD84238877410093E043 /* RandomColors.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5752FD85238877410093E043 /* RandomColors.swift in Sources */,
 				57EB73B823735AFD006B9B72 /* ViewController.swift in Sources */,
 				57DF88AF23860EB200E50A69 /* ManualAssignmentViewController.swift in Sources */,
 				5737B3C923738E5700A74508 /* Colors.swift in Sources */,
