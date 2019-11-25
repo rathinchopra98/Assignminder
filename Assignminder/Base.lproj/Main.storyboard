@@ -306,6 +306,10 @@
                                 <state key="normal" title="Add Assignment">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="addAssignment:" destination="eVh-Nf-7sY" eventType="touchUpInside" id="V3C-Gn-6MM"/>
+                                    <segue destination="SVm-FJ-yVE" kind="unwind" unwindAction="unwindToThisViewWithSender:" id="kUF-xI-IY6"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G4G-ER-q1u">
                                 <rect key="frame" x="16" y="361" width="343" height="34"/>
@@ -325,6 +329,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XuY-c7-TaB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="SVm-FJ-yVE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="7100" y="0.73891625615763545"/>
         </scene>
@@ -446,6 +451,7 @@
                         <outlet property="addCourseBtn" destination="95A-UJ-QFT" id="6Gj-fb-DYA"/>
                         <outlet property="courseCodeTxt" destination="mvF-Ml-l9H" id="iWP-yv-5WP"/>
                         <outlet property="courseNameTxt" destination="J73-gk-L1f" id="F7m-xs-uYo"/>
+                        <outlet property="descriptionTxt" destination="r7X-km-rKp" id="neu-iE-6Ml"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pAX-Gh-9uH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -10,10 +10,10 @@ import Foundation
 
 class Assignment {
     var assignmentName: String
-    var dueDate: String
+    var dueDate: Date
     var courseId: String
     
-    init(assignmentName: String, dueDate: String, courseId: String) {
+    init(assignmentName: String, dueDate: Date, courseId: String) {
         self.assignmentName = assignmentName
         self.dueDate = dueDate
         self.courseId = courseId

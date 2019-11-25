@@ -14,6 +14,8 @@ class ManualAssignmentViewController: UIViewController {
     @IBOutlet weak var dueDate: UIDatePicker!
     @IBOutlet weak var addAssignmentBtn: UIButton!
     
+    var assignments = [Assignment]()
+    var courseId: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +24,12 @@ class ManualAssignmentViewController: UIViewController {
         addAssignmentBtn.setShadow(opacity: 0.65, radius: 5.0)
     }
     
-
-    /*
+    @IBAction func addAssignment(_ sender: Any) {
+        let assignment = Assignment(assignmentName: assignmentNameTxt.text ?? "Null", dueDate: dueDate.date, courseId: courseId)
+        assignments.append(assignment)
+    }
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -31,6 +37,6 @@ class ManualAssignmentViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

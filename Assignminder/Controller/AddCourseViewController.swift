@@ -13,6 +13,7 @@ class AddCourseViewController: UIViewController {
     @IBOutlet weak var courseNameTxt: UITextField!
     @IBOutlet weak var courseCodeTxt: UITextField!
     @IBOutlet weak var addCourseBtn: UIButton!
+    @IBOutlet weak var descriptionTxt: UITextField!
     
     var courseArray = [Course]()
     
@@ -35,7 +36,7 @@ class AddCourseViewController: UIViewController {
     }
     
     @IBAction func addCourse(_ sender: Any) {
-        var course = Course(courseName: courseNameTxt.text ?? "0", courseCode: courseCodeTxt.text ?? "0")
+        var course = Course(courseName: courseNameTxt.text ?? "0", courseCode: courseCodeTxt.text ?? "0", courseDescription: descriptionTxt.text ?? "Null")
         courseArray.append(course)
     }
     

@@ -16,6 +16,7 @@
 		57783C242373CBEB00DA3737 /* CoursesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57783C232373CBEB00DA3737 /* CoursesTableViewController.swift */; };
 		57B9AB5C2374D83700797C5C /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B9AB5B2374D83700797C5C /* Course.swift */; };
 		57BEDDC923833F8E008C6F8C /* AddCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BEDDC823833F8E008C6F8C /* AddCourseViewController.swift */; };
+		57CFC860238C755D0085734F /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CFC85F238C755D0085734F /* DateConverter.swift */; };
 		57DF88AF23860EB200E50A69 /* ManualAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DF88AE23860EB200E50A69 /* ManualAssignmentViewController.swift */; };
 		57E2205023747434004C3121 /* CoursesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E2204F23747434004C3121 /* CoursesTableViewCell.swift */; };
 		57E564CF23751F31004AE376 /* AssignmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E564CE23751F31004AE376 /* AssignmentTableViewController.swift */; };
@@ -38,6 +39,7 @@
 		57783C232373CBEB00DA3737 /* CoursesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTableViewController.swift; sourceTree = "<group>"; };
 		57B9AB5B2374D83700797C5C /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		57BEDDC823833F8E008C6F8C /* AddCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseViewController.swift; sourceTree = "<group>"; };
+		57CFC85F238C755D0085734F /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
 		57DF88AE23860EB200E50A69 /* ManualAssignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualAssignmentViewController.swift; sourceTree = "<group>"; };
 		57E2204F23747434004C3121 /* CoursesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTableViewCell.swift; sourceTree = "<group>"; };
 		57E564CE23751F31004AE376 /* AssignmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentTableViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				57E564CE23751F31004AE376 /* AssignmentTableViewController.swift */,
 				57BEDDC823833F8E008C6F8C /* AddCourseViewController.swift */,
 				57DF88AE23860EB200E50A69 /* ManualAssignmentViewController.swift */,
+				57CFC85F238C755D0085734F /* DateConverter.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57CFC860238C755D0085734F /* DateConverter.swift in Sources */,
 				5752FD85238877410093E043 /* RandomColors.swift in Sources */,
 				57EB73B823735AFD006B9B72 /* ViewController.swift in Sources */,
 				57DF88AF23860EB200E50A69 /* ManualAssignmentViewController.swift in Sources */,

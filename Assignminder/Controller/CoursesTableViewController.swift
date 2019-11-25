@@ -45,6 +45,9 @@ class CoursesTableViewController: UITableViewController {
         else if let sourceViewController = sender.source as? AddCourseViewController{
             courses = sourceViewController.courseArray
         }
+        //else if let sourceViewController = sender.source as? AssignmentTableViewController{
+          //  assignments = sourceViewController.assignmentsArrayTable
+        //}
     }
     // MARK: - Table view data source
 
@@ -126,6 +129,7 @@ class CoursesTableViewController: UITableViewController {
                 }
             }
             childPage.assignmentsArrayTable = newAssignments
+            childPage.courseId = courseId ?? "nil"
         }
         else if(segue.identifier == "addCourseSegue"){
             let childPage = segue.destination as! AddCourseViewController

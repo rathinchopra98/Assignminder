@@ -11,6 +11,7 @@ import UIKit
 class AssignmentTableViewController: UITableViewController {
 
     var assignmentsArrayTable = [Assignment]()
+    var courseId: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,12 @@ class AssignmentTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
+    @IBAction func unwindToThisView(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? ManualAssignmentViewController {
+            assignmentsArrayTable = sourceViewController.assignments
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -43,13 +50,14 @@ class AssignmentTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let changedDate = DateConverter()
         let randomColor = RandomColors()
         let cell = tableView.dequeueReusableCell(withIdentifier: "assignmentCell", for: indexPath)
             as! AssignmentTableViewCell
 
         // Configure the cell...
         cell.AssignmentLabel.text = assignmentsArrayTable[indexPath.row].assignmentName
-        cell.dueDateLabel.text = assignmentsArrayTable[indexPath.row].dueDate
+        cell.dueDateLabel.text = changedDate.convertDateToString(dateToConvert: assignmentsArrayTable[indexPath.row].dueDate)
         cell.colorLabel.backgroundColor = randomColor.getRandomColor()
         
         return cell
@@ -99,8 +107,11 @@ class AssignmentTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if(segue.identifier == "manualAssignmentSegue"){
+            let assignmentPage = segue.destination as! ManualAssignmentViewController
+            assignmentPage.assignments = self.assignmentsArrayTable
+            assignmentPage.courseId = courseId
+        }
     }
     
 

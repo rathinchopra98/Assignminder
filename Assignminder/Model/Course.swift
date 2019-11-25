@@ -11,9 +11,11 @@ import Foundation
 class Course {
     var courseName: String
     var courseCode: String
+    var courseDescription: String
     
-    init(courseName: String, courseCode: String) {
+    init(courseName: String, courseCode: String, courseDescription: String) {
         self.courseName = courseName
         self.courseCode = courseCode
+        self.courseDescription = courseDescription
     }
 }

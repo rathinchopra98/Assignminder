@@ -49,7 +49,7 @@ class SlateViewController: UIViewController, UIWebViewDelegate {
                     //print("\(json["Items"][0]["OrgUnit"]["Name"])")
                     for item in json["Items"].arrayValue{
                         if(item["OrgUnit"]["Type"]["Name"] == "Course Offering"){
-                            let course = Course(courseName: item["OrgUnit"]["Name"].stringValue, courseCode: item["OrgUnit"]["Id"].stringValue)
+                            let course = Course(courseName: item["OrgUnit"]["Name"].stringValue, courseCode: item["OrgUnit"]["Id"].stringValue, courseDescription: "NULL")
                             self.courseArray.append(course)
                         }
                     }
@@ -65,6 +65,7 @@ class SlateViewController: UIViewController, UIWebViewDelegate {
     }
     
     func getAssignments(){
+        let dateConverter = DateConverter()
         for object in courseArray{
             myGroup.enter()
             let URL = "https://slate.sheridancollege.ca/d2l/api/le/1.10/\(object.courseCode)/dropbox/folders/"
@@ -77,7 +78,7 @@ class SlateViewController: UIViewController, UIWebViewDelegate {
                     do {
                         let json = try JSON(data:response.data!)
                         for item in json.arrayValue{
-                            let assignment = Assignment(assignmentName: item["Name"].stringValue, dueDate: item["DueDate"].stringValue, courseId: object.courseCode)
+                            let assignment = Assignment(assignmentName: item["Name"].stringValue, dueDate: dateConverter.convertStringToDate(dateChange: item["DueDate"].stringValue), courseId: object.courseCode)
                             self.assignmentArray.append(assignment)
                         }
                     }
