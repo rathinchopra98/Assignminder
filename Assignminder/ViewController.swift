@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        siginBtn.layer.cornerRadius = siginBtn.frame.size.height/2.5
+        siginBtn.layer.cornerRadius = siginBtn.frame.size.height/2
         
         siginBtn.setShadow(opacity: 0.65, radius: 5.0)
         emailTextBox.setShadow(opacity: 0.25, radius: 5.0)
