@@ -59,6 +59,7 @@ class AssignmentTableViewController: UITableViewController {
         cell.AssignmentLabel.text = assignmentsArrayTable[indexPath.row].assignmentName
         cell.dueDateLabel.text = changedDate.convertDateToString(dateToConvert: assignmentsArrayTable[indexPath.row].dueDate)
         cell.colorLabel.backgroundColor = randomColor.getRandomColor()
+        cell.gradeLabel.text = "\(String(format: "%.2f", assignmentsArrayTable[indexPath.row].grade)) / \(String(format: "%.2f", assignmentsArrayTable[indexPath.row].weightage))"
         
         return cell
     }

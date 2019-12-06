@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController {
 
@@ -27,6 +29,27 @@ class ViewController: UIViewController {
         
         //setting the gradient background
         view.setGradientBackground(colorOne: Colors.loginColorOne, colorTwo: Colors.loginColorTwo)
+        
     }
+    
+    /*func PostAssignments(){
+        let assignment = Assignment(assignmentName: "hello", dueDate: Date.init(), courseId: "jknd", userId: "jsknc@hh.com", grade: 10.0, reminder: Date.init())
+        let body: [Assignment] = [assignment]
+        
+        do {
+            var request = try URLRequest(url: "http://localhost:5001/api/Assignments/", method: .post)
+            request.httpBody = try JSONSerialization.data(withJSONObject: body, options: [])
+
+            Alamofire.request(request)
+            .responseJSON { response in
+               print(response)
+            }
+            
+        } catch {
+            print(error)
+        }
+     https://slate.sheridancollege.ca/d2l/api/le/1.10/621482/grades/values/myGradeValues/
+     
+    }*/
 }
 
