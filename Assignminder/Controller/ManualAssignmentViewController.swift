@@ -25,7 +25,7 @@ class ManualAssignmentViewController: UIViewController {
     }
     
     @IBAction func addAssignment(_ sender: Any) {
-        let assignment = Assignment(assignmentName: assignmentNameTxt.text ?? "Null", dueDate: dueDate.date, courseId: courseId)
+        let assignment = Assignment(assignmentName: assignmentNameTxt.text ?? "Null", dueDate: dueDate.date, courseId: courseId, userId: "rc@gmail.com", grade: 0, priorityKey: 0, weightage: 0 )
         assignments.append(assignment)
     }
     

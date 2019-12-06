@@ -68,7 +68,7 @@ class SlateViewController: UIViewController, UIWebViewDelegate {
         let dateConverter = DateConverter()
         for object in courseArray{
             myGroup.enter()
-            let URL = "https://slate.sheridancollege.ca/d2l/api/le/1.10/\(object.courseCode)/dropbox/folders/"
+            let URL = "https://slate.sheridancollege.ca/d2l/api/le/1.10/\(object.courseCode)/grades/"
             
             // ALAMOFIRE function: get the data from the website
             Alamofire.request(URL, method: .get, parameters: nil).responseJSON {
@@ -78,7 +78,7 @@ class SlateViewController: UIViewController, UIWebViewDelegate {
                     do {
                         let json = try JSON(data:response.data!)
                         for item in json.arrayValue{
-                            let assignment = Assignment(assignmentName: item["Name"].stringValue, dueDate: dateConverter.convertStringToDate(dateChange: item["DueDate"].stringValue), courseId: object.courseCode)
+                            let assignment = Assignment(assignmentName: item["Name"].stringValue, dueDate: dateConverter.convertStringToDate(dateChange: "2019-09-09T03:59:00.000Z"), courseId: object.courseCode, userId: "rc@gmail.com", grade: 0, priorityKey: 0, weightage: Float(item["Weight"].stringValue)! )
                             self.assignmentArray.append(assignment)
                         }
                     }
@@ -87,6 +87,48 @@ class SlateViewController: UIViewController, UIWebViewDelegate {
                     }
                     
                 }
+                self.myGroup.leave()
+            }
+        }
+        myGroup.notify(queue: .main) {
+            self.getGradesForAssignments()
+        }
+    }
+    
+    func getGradesForAssignments(){
+        let dateConverter = DateConverter()
+        
+        for object in courseArray{
+            myGroup.enter()
+            var tempAssignments = [Assignment]()
+            let URL = "https://slate.sheridancollege.ca/d2l/api/le/1.10/\(object.courseCode)/grades/values/myGradeValues/"
+            
+            // ALAMOFIRE function: get the data from the website
+            Alamofire.request(URL, method: .get, parameters: nil).responseJSON {
+                (response) in
+                if (response.result.isSuccess) {
+                    
+                    do {
+                        let json = try JSON(data:response.data!)
+                        for item in json.arrayValue{
+                            let assignment = Assignment(assignmentName: item["GradeObjectName"].stringValue, dueDate: dateConverter.convertStringToDate(dateChange: "2019-09-09T03:59:00.000Z"), courseId: object.courseCode, userId: "rc@gmail.com", grade: Float(item["WeightedNumerator"].stringValue) ?? 0, priorityKey: 0, weightage: Float(item["WeightedDenominator"].stringValue) ?? 0 )
+                            tempAssignments.append(assignment)
+                        }
+                    }
+                    catch {
+                        print ("Error while parsing JSON response")
+                    }
+                }
+                let temp = self.assignmentArray.filter {
+                    $0.courseId == object.courseCode
+                }
+                for item in temp{
+                    let gradeName = tempAssignments.filter{$0.assignmentName == item.assignmentName}.first
+                    if(gradeName != nil){
+                        self.assignmentArray.first(where: { $0.assignmentName == gradeName?.assignmentName && $0.courseId == gradeName?.courseId })?.grade = gradeName?.grade ?? 0
+                    }
+                }
+                
                 self.myGroup.leave()
             }
         }

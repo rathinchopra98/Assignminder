@@ -48,6 +48,8 @@ class ViewController: UIViewController {
         } catch {
             print(error)
         }
+     https://slate.sheridancollege.ca/d2l/api/le/1.10/621482/grades/values/myGradeValues/
+     
     }*/
 }
 

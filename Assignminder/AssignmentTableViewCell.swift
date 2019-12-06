@@ -13,6 +13,7 @@ class AssignmentTableViewCell: UITableViewCell {
     @IBOutlet weak var colorLabel: UILabel!
     @IBOutlet weak var dueDateLabel: UILabel!
     @IBOutlet weak var AssignmentLabel: UILabel!
+    @IBOutlet weak var gradeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
