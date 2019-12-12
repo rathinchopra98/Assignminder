@@ -15,6 +15,7 @@
 		574BE7452396C0C3008670DE /* ParameterEncodingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574BE7442396C0C3008670DE /* ParameterEncodingExtension.swift */; };
 		5752FD85238877410093E043 /* RandomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752FD84238877410093E043 /* RandomColors.swift */; };
 		57783C242373CBEB00DA3737 /* CoursesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57783C232373CBEB00DA3737 /* CoursesTableViewController.swift */; };
+		57A9E3BB23A29A5700F2F5D6 /* GetDistinctObjectInArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A9E3BA23A29A5700F2F5D6 /* GetDistinctObjectInArray.swift */; };
 		57B9AB5C2374D83700797C5C /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B9AB5B2374D83700797C5C /* Course.swift */; };
 		57BEDDC923833F8E008C6F8C /* AddCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BEDDC823833F8E008C6F8C /* AddCourseViewController.swift */; };
 		57C5090F2399D18F00109190 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C5090E2399D18F00109190 /* ArrayExtension.swift */; };
@@ -30,6 +31,7 @@
 		57EB73BB23735AFD006B9B72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57EB73B923735AFD006B9B72 /* Main.storyboard */; };
 		57EB73BD23735AFD006B9B72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57EB73BC23735AFD006B9B72 /* Assets.xcassets */; };
 		57EB73C023735AFD006B9B72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57EB73BE23735AFD006B9B72 /* LaunchScreen.storyboard */; };
+		57F5075723A1F516002C4D3E /* CoursePrioritization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F5075623A1F516002C4D3E /* CoursePrioritization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,7 @@
 		574BE7442396C0C3008670DE /* ParameterEncodingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncodingExtension.swift; sourceTree = "<group>"; };
 		5752FD84238877410093E043 /* RandomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomColors.swift; sourceTree = "<group>"; };
 		57783C232373CBEB00DA3737 /* CoursesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTableViewController.swift; sourceTree = "<group>"; };
+		57A9E3BA23A29A5700F2F5D6 /* GetDistinctObjectInArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDistinctObjectInArray.swift; sourceTree = "<group>"; };
 		57B9AB5B2374D83700797C5C /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		57BEDDC823833F8E008C6F8C /* AddCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseViewController.swift; sourceTree = "<group>"; };
 		57C5090E2399D18F00109190 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
@@ -57,6 +60,7 @@
 		57EB73BC23735AFD006B9B72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57EB73BF23735AFD006B9B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57EB73C123735AFD006B9B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57F5075623A1F516002C4D3E /* CoursePrioritization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePrioritization.swift; sourceTree = "<group>"; };
 		6A9D9275F85CC5168FBB1484 /* Pods-Assignminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignminder.debug.xcconfig"; path = "Target Support Files/Pods-Assignminder/Pods-Assignminder.debug.xcconfig"; sourceTree = "<group>"; };
 		CC205639EB77BC67D1E5BA52 /* Pods_Assignminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assignminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D17BD14E53CA083D8D9C72E4 /* Pods-Assignminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignminder.release.xcconfig"; path = "Target Support Files/Pods-Assignminder/Pods-Assignminder.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 				57BEDDC823833F8E008C6F8C /* AddCourseViewController.swift */,
 				57DF88AE23860EB200E50A69 /* ManualAssignmentViewController.swift */,
 				57CFC85F238C755D0085734F /* DateConverter.swift */,
+				57F5075623A1F516002C4D3E /* CoursePrioritization.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 				57EB73BC23735AFD006B9B72 /* Assets.xcassets */,
 				57EB73BE23735AFD006B9B72 /* LaunchScreen.storyboard */,
 				57EB73C123735AFD006B9B72 /* Info.plist */,
+				57A9E3BA23A29A5700F2F5D6 /* GetDistinctObjectInArray.swift */,
 			);
 			path = Assignminder;
 			sourceTree = "<group>";
@@ -298,6 +304,7 @@
 			files = (
 				57CFC860238C755D0085734F /* DateConverter.swift in Sources */,
 				5752FD85238877410093E043 /* RandomColors.swift in Sources */,
+				57A9E3BB23A29A5700F2F5D6 /* GetDistinctObjectInArray.swift in Sources */,
 				57EB73B823735AFD006B9B72 /* ViewController.swift in Sources */,
 				57DF88AF23860EB200E50A69 /* ManualAssignmentViewController.swift in Sources */,
 				5737B3C923738E5700A74508 /* Colors.swift in Sources */,
@@ -305,6 +312,7 @@
 				574BE7452396C0C3008670DE /* ParameterEncodingExtension.swift in Sources */,
 				57EB73B423735AFD006B9B72 /* AppDelegate.swift in Sources */,
 				57E564D123751FDA004AE376 /* AssignmentTableViewCell.swift in Sources */,
+				57F5075723A1F516002C4D3E /* CoursePrioritization.swift in Sources */,
 				5737B3D02373901200A74508 /* UIShadows.swift in Sources */,
 				57E2205023747434004C3121 /* CoursesTableViewCell.swift in Sources */,
 				5737B3CE23738FAE00A74508 /* UIViewAndExtension.swift in Sources */,

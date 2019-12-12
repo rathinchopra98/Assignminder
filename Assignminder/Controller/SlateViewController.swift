@@ -97,6 +97,7 @@ class SlateViewController: UIViewController, UIWebViewDelegate {
     
     func getGradesForAssignments(){
         let dateConverter = DateConverter()
+        let coursePrioritization = CoursePrioritization()
         
         for object in courseArray{
             myGroup.enter()
@@ -128,6 +129,8 @@ class SlateViewController: UIViewController, UIWebViewDelegate {
                         self.assignmentArray.first(where: { $0.assignmentName == gradeName?.assignmentName && $0.courseId == gradeName?.courseId })?.grade = gradeName?.grade ?? 0
                     }
                 }
+                
+                self.assignmentArray = coursePrioritization.priortizeAssignments(assignments: self.assignmentArray, courses: self.courseArray)
                 
                 self.myGroup.leave()
             }

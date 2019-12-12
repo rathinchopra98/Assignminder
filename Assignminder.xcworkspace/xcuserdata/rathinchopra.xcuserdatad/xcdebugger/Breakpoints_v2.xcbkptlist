@@ -228,5 +228,133 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1E783144-83CD-4724-8A19-3A7E0BF3580F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Assignminder/Controller/CoursePrioritization.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "priortizeAssignments(assignments:courses:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F70F6245-1466-479E-93B0-62005F1DD265"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Assignminder/Controller/SlateViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "getGradesForAssignments()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5DB657F1-CB4B-4E0E-A74E-4BF1C9890A7A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Assignminder/Controller/SlateViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "getGradesForAssignments()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5DB657F1-CB4B-4E0E-A74E-4BF1C9890A7A - ac7344c35c811919"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Assignminder.SlateViewController.getGradesForAssignments() -&gt; ()"
+                  moduleName = "Assignminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rathinchopra/Desktop/SoftwareEngineering/Assignminder/Assignminder/Controller/SlateViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "4392">
+               </Location>
+               <Location
+                  uuid = "5DB657F1-CB4B-4E0E-A74E-4BF1C9890A7A - c46e990f47635bcf"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Assignminder.Assignment) -&gt; Swift.Bool in closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Assignminder.SlateViewController.getGradesForAssignments() -&gt; ()"
+                  moduleName = "Assignminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rathinchopra/Desktop/SoftwareEngineering/Assignminder/Assignminder/Controller/SlateViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "87">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7A737B38-FA97-4F95-96DD-B7AE62D1BAE1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Assignminder/Controller/SlateViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "getGradesForAssignments()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7A737B38-FA97-4F95-96DD-B7AE62D1BAE1 - ac7344c35c811919"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Assignminder.SlateViewController.getGradesForAssignments() -&gt; ()"
+                  moduleName = "Assignminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rathinchopra/Desktop/SoftwareEngineering/Assignminder/Assignminder/Controller/SlateViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "3894">
+               </Location>
+               <Location
+                  uuid = "7A737B38-FA97-4F95-96DD-B7AE62D1BAE1 - 6810229ebd0ef0c8"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Assignminder.Assignment) -&gt; Swift.Bool in closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Assignminder.SlateViewController.getGradesForAssignments() -&gt; ()"
+                  moduleName = "Assignminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rathinchopra/Desktop/SoftwareEngineering/Assignminder/Assignminder/Controller/SlateViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
