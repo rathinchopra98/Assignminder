@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		124BFA18EF09354135C7F1ED /* Pods_Assignminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC205639EB77BC67D1E5BA52 /* Pods_Assignminder.framework */; };
+		5704729123A32946000A7D3A /* CourseAndAssignmentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5704729023A32946000A7D3A /* CourseAndAssignmentInfo.swift */; };
+		5704729323A32A46000A7D3A /* CourseProgressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5704729223A32A46000A7D3A /* CourseProgressTableViewController.swift */; };
+		5704729523A32A62000A7D3A /* CourseProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5704729423A32A62000A7D3A /* CourseProgressTableViewCell.swift */; };
+		5704729723A32CEC000A7D3A /* CalculateCourseProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5704729623A32CEC000A7D3A /* CalculateCourseProgress.swift */; };
+		5704729923A33DD8000A7D3A /* AssignmentProgressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5704729823A33DD8000A7D3A /* AssignmentProgressTableViewController.swift */; };
+		5704729B23A33DFD000A7D3A /* AssignmentProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5704729A23A33DFD000A7D3A /* AssignmentProgressTableViewCell.swift */; };
 		5737B3C923738E5700A74508 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5737B3C823738E5700A74508 /* Colors.swift */; };
 		5737B3CE23738FAE00A74508 /* UIViewAndExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5737B3CD23738FAE00A74508 /* UIViewAndExtension.swift */; };
 		5737B3D02373901200A74508 /* UIShadows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5737B3CF2373901200A74508 /* UIShadows.swift */; };
@@ -35,6 +41,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5704729023A32946000A7D3A /* CourseAndAssignmentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseAndAssignmentInfo.swift; sourceTree = "<group>"; };
+		5704729223A32A46000A7D3A /* CourseProgressTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseProgressTableViewController.swift; sourceTree = "<group>"; };
+		5704729423A32A62000A7D3A /* CourseProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseProgressTableViewCell.swift; sourceTree = "<group>"; };
+		5704729623A32CEC000A7D3A /* CalculateCourseProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateCourseProgress.swift; sourceTree = "<group>"; };
+		5704729823A33DD8000A7D3A /* AssignmentProgressTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentProgressTableViewController.swift; sourceTree = "<group>"; };
+		5704729A23A33DFD000A7D3A /* AssignmentProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentProgressTableViewCell.swift; sourceTree = "<group>"; };
 		5737B3C823738E5700A74508 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5737B3CD23738FAE00A74508 /* UIViewAndExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewAndExtension.swift; sourceTree = "<group>"; };
 		5737B3CF2373901200A74508 /* UIShadows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIShadows.swift; sourceTree = "<group>"; };
@@ -105,6 +117,8 @@
 				5752FD84238877410093E043 /* RandomColors.swift */,
 				574BE7442396C0C3008670DE /* ParameterEncodingExtension.swift */,
 				57C5090E2399D18F00109190 /* ArrayExtension.swift */,
+				5704729423A32A62000A7D3A /* CourseProgressTableViewCell.swift */,
+				5704729A23A33DFD000A7D3A /* AssignmentProgressTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -120,6 +134,9 @@
 				57DF88AE23860EB200E50A69 /* ManualAssignmentViewController.swift */,
 				57CFC85F238C755D0085734F /* DateConverter.swift */,
 				57F5075623A1F516002C4D3E /* CoursePrioritization.swift */,
+				5704729223A32A46000A7D3A /* CourseProgressTableViewController.swift */,
+				5704729623A32CEC000A7D3A /* CalculateCourseProgress.swift */,
+				5704729823A33DD8000A7D3A /* AssignmentProgressTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -156,6 +173,7 @@
 				57EB73BE23735AFD006B9B72 /* LaunchScreen.storyboard */,
 				57EB73C123735AFD006B9B72 /* Info.plist */,
 				57A9E3BA23A29A5700F2F5D6 /* GetDistinctObjectInArray.swift */,
+				5704729023A32946000A7D3A /* CourseAndAssignmentInfo.swift */,
 			);
 			path = Assignminder;
 			sourceTree = "<group>";
@@ -307,11 +325,15 @@
 				57A9E3BB23A29A5700F2F5D6 /* GetDistinctObjectInArray.swift in Sources */,
 				57EB73B823735AFD006B9B72 /* ViewController.swift in Sources */,
 				57DF88AF23860EB200E50A69 /* ManualAssignmentViewController.swift in Sources */,
+				5704729123A32946000A7D3A /* CourseAndAssignmentInfo.swift in Sources */,
 				5737B3C923738E5700A74508 /* Colors.swift in Sources */,
+				5704729523A32A62000A7D3A /* CourseProgressTableViewCell.swift in Sources */,
 				57B9AB5C2374D83700797C5C /* Course.swift in Sources */,
+				5704729923A33DD8000A7D3A /* AssignmentProgressTableViewController.swift in Sources */,
 				574BE7452396C0C3008670DE /* ParameterEncodingExtension.swift in Sources */,
 				57EB73B423735AFD006B9B72 /* AppDelegate.swift in Sources */,
 				57E564D123751FDA004AE376 /* AssignmentTableViewCell.swift in Sources */,
+				5704729723A32CEC000A7D3A /* CalculateCourseProgress.swift in Sources */,
 				57F5075723A1F516002C4D3E /* CoursePrioritization.swift in Sources */,
 				5737B3D02373901200A74508 /* UIShadows.swift in Sources */,
 				57E2205023747434004C3121 /* CoursesTableViewCell.swift in Sources */,
@@ -319,10 +341,12 @@
 				57E564CF23751F31004AE376 /* AssignmentTableViewController.swift in Sources */,
 				57783C242373CBEB00DA3737 /* CoursesTableViewController.swift in Sources */,
 				57E564D323752063004AE376 /* Assignment.swift in Sources */,
+				5704729323A32A46000A7D3A /* CourseProgressTableViewController.swift in Sources */,
 				57BEDDC923833F8E008C6F8C /* AddCourseViewController.swift in Sources */,
 				57422694237493670005DCB7 /* SlateViewController.swift in Sources */,
 				57EB73B623735AFD006B9B72 /* SceneDelegate.swift in Sources */,
 				57C5090F2399D18F00109190 /* ArrayExtension.swift in Sources */,
+				5704729B23A33DFD000A7D3A /* AssignmentProgressTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

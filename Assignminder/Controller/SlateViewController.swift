@@ -131,6 +131,8 @@ class SlateViewController: UIViewController, UIWebViewDelegate {
                 }
                 
                 self.assignmentArray = coursePrioritization.priortizeAssignments(assignments: self.assignmentArray, courses: self.courseArray)
+                CourseAndAssignmentInfo.assignments = self.assignmentArray
+                CourseAndAssignmentInfo.courses = self.courseArray
                 
                 self.myGroup.leave()
             }
