@@ -1,71 +1,59 @@
 //
-//  AssignmentTableViewController.swift
+//  CourseProgressTableViewController.swift
 //  Assignminder
 //
-//  Created by Rathin Chopra on 2019-11-07.
+//  Created by Rathin Chopra on 2019-12-12.
 //  Copyright © 2019 Rathin Chopra. All rights reserved.
 //
 
 import UIKit
 
-class AssignmentTableViewController: UITableViewController {
-
-    var assignmentsArrayTable = [Assignment]()
-    var courseId: String = ""
+class CourseProgressTableViewController: UITableViewController {
+    var courseId = "";
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.rowHeight = 60
-        self.tableView.reloadData()
-    }
 
+        tableView.rowHeight = 60
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.reloadData()
     }
-    
-    @IBAction func unwindToThisView(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.source as? ManualAssignmentViewController {
-            assignmentsArrayTable = sourceViewController.assignments
-        }
-    }
-    
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return assignmentsArrayTable.count
+        return CourseAndAssignmentInfo.courses.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let changedDate = DateConverter()
         let randomColor = RandomColors()
-        let cell = tableView.dequeueReusableCell(withIdentifier: "assignmentCell", for: indexPath)
-            as! AssignmentTableViewCell
-
+        let calculateProgress = CalculateCourseProgress()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell", for: indexPath) as! CourseProgressTableViewCell
+        
         // Configure the cell...
-        cell.AssignmentLabel.text = assignmentsArrayTable[indexPath.row].assignmentName
-        cell.dueDateLabel.text = changedDate.convertDateToString(dateToConvert: assignmentsArrayTable[indexPath.row].dueDate)
+        cell.courseNameLabel.text = CourseAndAssignmentInfo.courses[indexPath.row].courseName
+        cell.courseIdLabel.text = CourseAndAssignmentInfo.courses[indexPath.row].courseCode
         cell.colorLabel.backgroundColor = randomColor.getRandomColor()
         
-        if(assignmentsArrayTable[indexPath.row].priorityKey != 0){
-            cell.gradeLabel.text = "Priority: \(assignmentsArrayTable[indexPath.row].priorityKey)"
+        let temp = CourseAndAssignmentInfo.assignments.filter {
+            $0.courseId == CourseAndAssignmentInfo.courses[indexPath.row].courseCode
         }
-        else{
-            cell.gradeLabel.text = "Marked"
-        }
+        let result = calculateProgress.calculateCourseProgress(assignments: temp)
+        
+        cell.progressLabel.text = "\(round(result))%"
         
         return cell
     }
     
-    @IBAction func addAssignment(_ sender: Any) {
-        performSegue(withIdentifier: "manualAssignmentSegue", sender: nil)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        courseId = CourseAndAssignmentInfo.courses[indexPath.row].courseCode
+        performSegue(withIdentifier: "assignmentProgressSegue", sender: nil)
     }
     
     /*
@@ -108,10 +96,9 @@ class AssignmentTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "manualAssignmentSegue"){
-            let assignmentPage = segue.destination as! ManualAssignmentViewController
-            assignmentPage.assignments = self.assignmentsArrayTable
-            assignmentPage.courseId = courseId
+        if(segue.identifier == "assignmentProgressSegue"){
+            let childPage = segue.destination as! AssignmentProgressTableViewController
+            childPage.courseId = self.courseId
         }
     }
     
